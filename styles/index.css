@@ -1,0 +1,285 @@
+/* Color Variables */
+:root {
+    --primary-blue: #1a4b84;
+    --secondary-blue: #2c71c7;
+    --light-blue: #e8f1ff;
+    --dark-blue: #0d2444;
+    --accent-blue: #4a90e2;
+}
+
+/* Global Styles */
+* {
+    transition: all 0.3s ease;
+}
+
+body {
+    color: #333;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: var(--primary-blue) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: padding 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+.navbar.expanded {
+    padding: 1rem;
+}
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+    position: relative;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-brand {
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
+}
+
+.navbar:hover .navbar-brand {
+    font-size: 1.4rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.navbar:hover .navbar-nav .nav-link {
+    padding: 0.7rem 1.2rem;
+    margin: 0 0.7rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-2px);
+}
+
+.navbar-light .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--light-blue);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-light .navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    padding: 120px 0;
+    background: linear-gradient(135deg, var(--light-blue) 0%, #ffffff 100%);
+}
+
+.hero-section .display-4 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-section .lead {
+    color: var(--secondary-blue);
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.hero-section .btn {
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.6s forwards;
+}
+
+.hero-section img {
+    transition: transform 0.5s ease;
+}
+
+.hero-section img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-blue);
+    border-color: var(--secondary-blue);
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Project Card Styles */
+.project-card {
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: none;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    transition: all 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Skills Section Styles */
+.skills-section {
+    background-color: var(--light-blue);
+    padding: 80px 0;
+}
+
+.skills-section .card {
+    transition: all 0.3s ease;
+    height: 250px;
+}
+
+.skills-section .card:hover {
+    transform: translateY(-5px);
+    background-color: var(--light-blue);
+}
+
+/* Progress Bar Styles */
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    background-color: var(--primary-blue);
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+.card:hover .progress-bar {
+    width: var(--width-value);
+}
+
+/* Experience Item Styles */
+.experience-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 3px solid var(--primary-blue);
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+    border-left: 8px solid var(--primary-blue);
+    transform: translateX(10px);
+    background-color: var(--light-blue);
+}
+
+/* Form Styles */
+.form-control {
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    transform: translateY(-2px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+/* Section Title Styles */
+section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+section h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-blue);
+    margin: 15px auto 0;
+    transition: width 0.3s ease;
+}
+
+section h2:hover:after {
+    width: 100px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-blue) !important;
+    color: white;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-blue);
+}
+
+/* Card Title Styles */
+.card-title {
+    color: var(--primary-blue);
+}
+
+h3, h4 {
+    color: var(--primary-blue);
+}
+
+/* Contact Section Styles */
+.contact-section {
+    background-color: white;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -283,3 +283,82 @@ h3, h4 {
         transform: translateY(0);
     }
 }
+
+
+/* Project Page */
+.project-detail {
+    padding: 120px 0 60px 0;
+}
+
+.project-detail:not(:first-of-type) {
+    padding-top: 60px;
+}
+
+.project-image {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+}
+
+.tech-stack {
+    margin: 20px 0;
+}
+
+.tech-badge {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background-color: var(--primary-blue);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.project-links a {
+    margin-right: 15px;
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+    color: var(--secondary-blue);
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-blue);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-blue);
+    color: white;
+    transform: translateY(-3px);
+}
